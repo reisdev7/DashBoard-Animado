@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard da Empresa - Lucro & Gestão</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Dash<span class="logo-accent">Flow</span></h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#overview-section" class="nav-link active" data-target="overview-section">
+                        <span class="icon"><i class="fas fa-home"></i></span> Início
+                    </a></li>
+                    <li><a href="#analytics-section" class="nav-link" data-target="analytics-section">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span> Análises
+                    </a></li>
+                    <li><a href="#products-section" class="nav-link" data-target="products-section">
+                        <span class="icon"><i class="fas fa-box-open"></i></span> Produtos
+                    </a></li>
+                    <li><a href="#users-section" class="nav-link" data-target="users-section">
+                        <span class="icon"><i class="fas fa-users"></i></span> Usuários
+                    </a></li>
+                    <li><a href="#settings-section" class="nav-link" data-target="settings-section">
+                        <span class="icon"><i class="fas fa-cog"></i></span> Configurações
+                    </a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar"></div>
+                <p>Bem-vindo, Admin</p>
+                <small><i class="fas fa-circle status-online"></i> online</small>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h2 id="current-section-title">Visão Geral do Sistema</h2>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Buscar..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <button class="btn-action"><i class="fas fa-sync-alt"></i> Atualizar Dados</button>
+                </div>
+            </header>
+
+            <section id="overview-section" class="dashboard-section active">
+                <div class="summary-cards">
+                    <div class="card" style="--animation-delay: 0.2s;">
+                        <div class="card-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="card-data">
+                            <h3>Lucro Líquido Atual</h3>
+                            <p id="live-profit-value">R$ 0,00</p>
+                            <small class="profit-indicator"><i class="fas fa-caret-up"></i> +0.00% (simulado)</small>
+                        </div>
+                    </div>
+                    <div class="card" style="--animation-delay: 0.4s;">
+                        <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <div class="card-data">
+                            <h3>Vendas Hoje</h3>
+                            <p>R$ 1.250,00</p>
+                            <small><i class="fas fa-arrow-up"></i> +12% desde ontem</small>
+                        </div>
+                    </div>
+                    <div class="card" style="--animation-delay: 0.6s;">
+                        <div class="card-icon"><i class="fas fa-user-plus"></i></div>
+                        <div class="card-data">
+                            <h3>Novos Clientes</h3>
+                            <p>+15</p>
+                            <small><i class="fas fa-arrow-up"></i> +5% em relação à semana passada</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-section">
+                    <div class="chart-card" style="--animation-delay: 0.8s;">
+                        <h3>Progresso Mensal (Objetivo)</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="--progress-width: 75%;"></div>
+                        </div>
+                        <p class="progress-text">75% Concluído</p>
+                    </div>
+                    <div class="chart-card" style="--animation-delay: 1s;">
+                        <h3>Top 5 Itens Mais Vendidos</h3>
+                        <ul class="top-items-list">
+                            <li>Produto A <span class="item-value">120 unidades</span></li>
+                            <li>Produto B <span class="item-value">95 unidades</span></li>
+                            <li>Produto C <span class="item-value">70 unidades</span></li>
+                            <li>Produto D <span class="item-value">50 unidades</span></li>
+                            <li>Produto E <span class="item-value">30 unidades</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="recent-activity" style="--animation-delay: 1.2s;">
+                    <h3>Atividade Recente da Empresa</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>05/05/2025</td>
+                                <td>Venda</td>
+                                <td>Venda do Produto X</td>
+                                <td>R$ 250,00</td>
+                            </tr>
+                            <tr>
+                                <td>04/05/2025</td>
+                                <td>Cadastro</td>
+                                <td>Novo Cliente: Maria S.</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>03/05/2025</td>
+                                <td>Pedido</td>
+                                <td>Pedido #5678 processado</td>
+                                <td>R$ 500,00</td>
+                            </tr>
+                            <tr>
+                                <td>02/05/2025</td>
+                                <td>Suporte</td>
+                                <td>Ticket #987 fechado</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="analytics-section" class="dashboard-section hidden">
+                <div class="summary-cards">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <div class="card-data">
+                            <h3>Receita Total</h3>
+                            <p>R$ 15.200,00</p>
+                            <small><i class="fas fa-chart-line"></i> +8% Mês Passado</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-eye"></i></div>
+                        <div class="card-data">
+                            <h3>Visitas no Site</h3>
+                            <p>35.450</p>
+                            <small><i class="fas fa-chart-line"></i> +15% Mês Passado</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="card-data">
+                            <h3>Taxa Conversão</h3>
+                            <p>3.2%</p>
+                            <small><i class="fas fa-arrow-down"></i> -0.1% Mês Passado</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-section">
+                    <div class="chart-card">
+                        <h3>Receita Mensal</h3>
+                        <div class="bar-chart-container">
+                            <div class="bar-chart-bar" data-height="60"><span>Jan</span></div>
+                            <div class="bar-chart-bar" data-height="75"><span>Fev</span></div>
+                            <div class="bar-chart-bar" data-height="50"><span>Mar</span></div>
+                            <div class="bar-chart-bar" data-height="90"><span>Abr</span></div>
+                            <div class="bar-chart-bar" data-height="80"><span>Mai</span></div>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Distribuição por Categoria</h3>
+                        <div class="pie-chart-container">
+                            <div class="pie-chart-graphic">
+                                </div>
+                            <ul class="pie-chart-legend">
+                                <li><span class="legend-color color-1"></span> Eletrônicos (40%)</li>
+                                <li><span class="legend-color color-2"></span> Vestuário (25%)</li>
+                                <li><span class="legend-color color-3"></span> Casa (20%)</li>
+                                <li><span class="legend-color color-4"></span> Outros (15%)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Insights Chave</h3>
+                    <ul class="insights-list">
+                        <li><span class="insight-icon"><i class="fas fa-lightbulb"></i></span> O mês de Abril registrou o maior pico de vendas.</li>
+                        <li><span class="insight-icon"><i class="fas fa-bullseye"></i></span> Campanha de marketing "Verão 2025" teve alta taxa de conversão.</li>
+                        <li><span class="insight-icon"><i class="fas fa-exclamation-triangle"></i></span> Atenção à categoria "Casa" que mostrou leve declínio.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="products-section" class="dashboard-section hidden">
+                <div class="summary-cards">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-cubes"></i></div>
+                        <div class="card-data">
+                            <h3>Total de Produtos</h3>
+                            <p>235</p>
+                            <small><i class="fas fa-plus"></i> 10 novos este mês</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-warehouse"></i></div>
+                        <div class="card-data">
+                            <h3>Estoque Baixo</h3>
+                            <p>12</p>
+                            <small><i class="fas fa-exclamation-circle"></i> Itens precisam de reposição</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-star"></i></div>
+                        <div class="card-data">
+                            <h3>Mais Vendidos</h3>
+                            <p>5</p>
+                            <small><i class="fas fa-chart-bar"></i> Top produtos em destaque</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <div class="table-header-actions">
+                        <h3>Lista de Produtos</h3>
+                        <button class="btn-action btn-add-item"><i class="fas fa-plus"></i> Adicionar Produto</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Categoria</th>
+                                <th>Preço</th>
+                                <th>Estoque</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Smartphone X</td>
+                                <td>Eletrônicos</td>
+                                <td>R$ 1.999,00</td>
+                                <td>50</td>
+                                <td><button class="action-btn edit-btn"><i class="fas fa-edit"></i> Editar</button> <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Excluir</button></td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Camiseta Casual</td>
+                                <td>Vestuário</td>
+                                <td>R$ 59,90</td>
+                                <td>200</td>
+                                <td><button class="action-btn edit-btn"><i class="fas fa-edit"></i> Editar</button> <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Excluir</button></td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>Headphones Gamer</td>
+                                <td>Eletrônicos</td>
+                                <td>R$ 349,00</td>
+                                <td>30</td>
+                                <td><button class="action-btn edit-btn"><i class="fas fa-edit"></i> Editar</button> <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Excluir</button></td>
+                            </tr>
+                            <tr>
+                                <td>004</td>
+                                <td>Cadeira Ergonômica</td>
+                                <td>Casa</td>
+                                <td>R$ 899,00</td>
+                                <td>15</td>
+                                <td><button class="action-btn edit-btn"><i class="fas fa-edit"></i> Editar</button> <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Excluir</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="users-section" class="dashboard-section hidden">
+                <div class="summary-cards">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-users"></i></div>
+                        <div class="card-data">
+                            <h3>Total de Usuários</h3>
+                            <p>1.280</p>
+                            <small><i class="fas fa-user-plus"></i> +50 novos este mês</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-circle-check"></i></div>
+                        <div class="card-data">
+                            <h3>Usuários Ativos</h3>
+                            <p>980</p>
+                            <small><i class="fas fa-percent"></i> 75% de usuários ativos</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-calendar-plus"></i></div>
+                        <div class="card-data">
+                            <h3>Novos Registros</h3>
+                            <p>12</p>
+                            <small><i class="fas fa-calendar-alt"></i> Últimos 7 dias</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <div class="table-header-actions">
+                        <h3>Lista de Usuários</h3>
+                        <button class="btn-action btn-add-item"><i class="fas fa-user-plus"></i> Adicionar Usuário</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Cargo</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>101</td>
+                                <td>Ana Silva</td>
+                                <td>ana.silva@email.com</td>
+                                <td>Administrador</td>
+                                <td>Ativo</td>
+                                <td><button class="action-btn edit-btn"><i class="fas fa-edit"></i> Editar</button> <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Excluir</button></td>
+                            </tr>
+                            <tr>
+                                <td>102</td>
+                                <td>Bruno Mendes</td>
+                                <td>bruno.m@email.com</td>
+                                <td>Editor</td>
+                                <td>Ativo</td>
+                                <td><button class="action-btn edit-btn"><i class="fas fa-edit"></i> Editar</button> <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Excluir</button></td>
+                            </tr>
+                            <tr>
+                                <td>103</td>
+                                <td>Carlos Rocha</td>
+                                <td>carlos.r@email.com</td>
+                                <td>Visualizador</td>
+                                <td>Inativo</td>
+                                <td><button class="action-btn edit-btn"><i class="fas fa-edit"></i> Editar</button> <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Excluir</button></td>
+                            </tr>
+                            <tr>
+                                <td>104</td>
+                                <td>Denise Lima</td>
+                                <td>denise.l@email.com</td>
+                                <td>Administrador</td>
+                                <td>Ativo</td>
+                                <td><button class="action-btn edit-btn"><i class="fas fa-edit"></i> Editar</button> <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Excluir</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="settings-section" class="dashboard-section hidden">
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-user-cog"></i> Configurações de Perfil</h3>
+                        <div class="form-group">
+                            <label for="username">Nome de Usuário:</label>
+                            <input type="text" id="username" value="Admin" class="settings-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" value="admin@dashboard.com" class="settings-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Senha:</label>
+                            <input type="password" id="password" value="********" class="settings-input">
+                        </div>
+                        <button class="btn-action settings-save-btn"><i class="fas fa-save"></i> Salvar Perfil</button>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class="fas fa-bell"></i> Notificações</h3>
+                        <div class="form-group switch-group">
+                            <label>Alertas de Vendas:</label>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group switch-group">
+                            <label>Novos Clientes:</label>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group switch-group">
+                            <label>Atualizações do Sistema:</label>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <button class="btn-action settings-save-btn"><i class="fas fa-save"></i> Salvar Notificações</button>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class="fas fa-palette"></i> Preferências de Tema</h3>
+                        <div class="form-group">
+                            <label for="theme-select">Esquema de Cores:</label>
+                            <select id="theme-select" class="settings-input">
+                                <option value="dark">Escuro (Padrão)</option>
+                                <option value="light">Claro</option>
+                                <option value="blue-dark">Azul Escuro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="font-size-slider">Tamanho da Fonte:</label>
+                            <input type="range" id="font-size-slider" min="14" max="18" value="16" class="settings-input">
+                            <span id="font-size-value" style="margin-left: 10px; color: var(--secondary-text);">16px</span>
+                        </div>
+                        <button class="btn-action settings-save-btn"><i class="fas fa-save"></i> Salvar Tema</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
